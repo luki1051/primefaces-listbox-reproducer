@@ -14,7 +14,13 @@
 
         <h1>#{testView.string}</h1>
         <h:form id="frmTest">
-
+            <p:selectOneListbox value="#{testView.selected}" var="v">
+                <p:ajax update="@form" />
+                <f:selectItems value="#{testView.data}" var="value" itemValue="#{value}" itemLabel="#{value}" />
+                <p:column>
+                    <h:outputText value="#{v}" />
+                </p:column>
+            </p:selectOneListbox>
         </h:form>
 
     </h:body>

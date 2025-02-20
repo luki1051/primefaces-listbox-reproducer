@@ -22,6 +22,7 @@ public class TestView implements Serializable {
     private BigDecimal decimal;
     private LocalDateTime localDateTime;
     private List<TestObject> list;
+    private String selected;
 
     @PostConstruct
     public void init() {
@@ -32,6 +33,10 @@ public class TestView implements Serializable {
                 new TestObject("The Bodyguard", "Whitney Houston", 1992),
                 new TestObject("The Dark Side of the Moon", "Pink Floyd", 1973)
         ));
+    }
+
+    public List<String> getData() {
+        return Arrays.asList("One", "Two", "Three", "Four", "Five");
     }
 
 }
